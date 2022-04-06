@@ -42,7 +42,7 @@ Bmi.UsingData = new BiometricData
     Age = 20,
 };
 
-double bmi = Bmi.GetBmi();
+double bmi = Bmi.GetBmi(); // 24,6913580246914
 ```
 
 > #### Notes
@@ -82,7 +82,7 @@ Bmi.Start(Data, Deepness.High);
 And finally you need to run the calculating method:
 
 ```C#
-double gender = Bmi.GetGenderAssessment();
+double gender = Bmi.GetGenderAssessment(); // 0,913728188476462
 ```
 
 You can also set anew instance of the **BiometricData** class as a parameter:
@@ -94,6 +94,7 @@ double gender = Bmi.GetGenderAssessment(new BiometricData
   Weigth = 66,
   Age = 22
 });
+// 0,890310395241412
 ```
 
 ### Complete example code
@@ -121,8 +122,8 @@ internal class BmiViewModel
 
     Bmi.Start(Deepness.High);
 
-    double bmi = Bmi.GetBmi();
-    double gender = Bmi.GetGenderAssessment();
+    double bmi = Bmi.GetBmi(); // 24,6913580246914
+    double gender = Bmi.GetGenderAssessment(); // 0,913728188476462
   }
 }
 ```
