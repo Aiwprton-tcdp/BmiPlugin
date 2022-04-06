@@ -1,4 +1,4 @@
-﻿namespace BmiPlugin.Models
+﻿namespace BmiPlugin
 {
     public enum Deepness : uint
     {

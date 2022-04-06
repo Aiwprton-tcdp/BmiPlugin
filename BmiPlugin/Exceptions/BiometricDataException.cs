@@ -1,33 +1,38 @@
-﻿namespace BmiPlugin.Exceptions
+﻿using System;
+
+namespace BmiPlugin.Exceptions
 {
-    public class BiometricDataException : Exception
+    internal class BiometricDataException : ArgumentException
     {
         public BiometricDataException(string name, double value) : base(name)
         {
             if (value == 0.0d)
             {
-                throw new($"The '{name}' value is not specified.");
+                throw new BiometricDataException($"The '{name}' value is not specified.");
             }
             else if (value < 0.0d)
             {
-                throw new($"The '{name}' value is less than zero.");
+                throw new BiometricDataException($"The '{name}' value is less than zero.");
             }
             else if (value > short.MaxValue)
             {
-                throw new($"The '{name}' value is very big.");
+                throw new BiometricDataException($"The '{name}' value is very big.");
             }
         }
 
         public BiometricDataException()
         {
+            throw new ArgumentException();
         }
 
         public BiometricDataException(string message) : base(message)
         {
+            throw new ArgumentException(message);
         }
 
         public BiometricDataException(string message, Exception innerException) : base(message, innerException)
         {
+            throw new ArgumentException(message, innerException);
         }
     }
 }

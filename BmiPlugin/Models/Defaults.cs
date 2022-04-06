@@ -1,4 +1,6 @@
-﻿namespace BmiPlugin.Models
+﻿using System.Collections.Generic;
+
+namespace BmiPlugin.Models
 {
     internal class Defaults
     {

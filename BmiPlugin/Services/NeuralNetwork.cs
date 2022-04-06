@@ -1,4 +1,6 @@
-﻿namespace BmiPlugin.Services
+﻿using System.Collections.Generic;
+
+namespace BmiPlugin.Services
 {
     internal class NeuralNetwork
     {
@@ -10,8 +12,8 @@
         {
             InputNeurons = new List<Neuron>();
             for (int i = 0; i < Bmi.DataCount; i++)
-                InputNeurons.Add(new());
-            OutputNeuron = new();
+                InputNeurons.Add(new Neuron());
+            OutputNeuron = new Neuron();
         }
 
         public double Think(List<double> input)

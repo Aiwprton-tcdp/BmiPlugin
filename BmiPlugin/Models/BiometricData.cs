@@ -1,7 +1,7 @@
 ﻿using BmiPlugin.Exceptions;
 using System.Reflection;
 
-namespace BmiPlugin.Models
+namespace BmiPlugin
 {
     public class BiometricData
     {
@@ -10,10 +10,10 @@ namespace BmiPlugin.Models
         public double Age { get; set; }
 
 
-        public PropertyInfo[] GetProperties() =>
+        internal PropertyInfo[] GetProperties() =>
             new BiometricData().GetType().GetProperties();
 
-        public int GetPropertiesCount() =>
+        internal int GetPropertiesCount() =>
             GetProperties().Length;
 
         internal void CheckBmiProperties(double Height, double Weigth, double Age)

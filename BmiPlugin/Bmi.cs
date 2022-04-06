@@ -1,11 +1,12 @@
 ﻿using BmiPlugin.Models;
 using BmiPlugin.Services;
+using System;
 
 namespace BmiPlugin
 {
     public class Bmi
 	{
-		public static BiometricData UsingData { get; set; } = new();
+		public static BiometricData UsingData { get; set; } = new BiometricData();
 		internal static int DataCount { get; set; } = Defaults.Length;
 
 
@@ -14,7 +15,7 @@ namespace BmiPlugin
 
 		public static void Start(BiometricData input, Deepness deep = Deepness.Medium)
 		{
-			UsingData = input;
+            UsingData = input;
 			WhichAreNonZero();
 			UsingData.CheckAllProperties();
 
@@ -51,7 +52,7 @@ namespace BmiPlugin
 			if (count < DataCount) DataCount = count;
 			if (DataCount < 2)
 			{
-				throw new("Not enough data to run.");
+				throw new Exception("Not enough data to run.");
 			}
 		}
 	}

@@ -1,4 +1,7 @@
-﻿namespace BmiPlugin.Services
+﻿using System;
+using System.Collections.Generic;
+
+namespace BmiPlugin.Services
 {
     internal class Neuron
 	{
@@ -9,7 +12,7 @@
 
 		public Neuron()
 		{
-			Weights = new();
+			Weights = new List<double>();
 
 			for (int i = 0; i < Bmi.DataCount; i++)
 				Weights.Add(RandomObj.NextDouble());
